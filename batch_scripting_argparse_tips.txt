@@ -1,0 +1,19 @@
+# Goal: Parse arguments in bash when using an array: 
+# command: test.sh arg1 arg2 arg3
+
+echo "$(@:0)"
+argv=("$@")
+echo "${argv[0]}"
+echo "${argv:0}"
+echo "${argv:0:1}"
+
+# permanently remove argument 1 from the array using shift
+shift
+echo "Copying"
+echo "$@"
+
+
+# OUTPUT: 
+arg1
+arg1
+a
